@@ -203,6 +203,22 @@
             <h2>Up to <span>70% off</span> - All t-shirts & Accessories</h2>
             <button class="normal">Explore More</button>
         </section>
+
+        <footer class="section-p1">
+            <div class="col">
+                <img src="{{asset('assets/index/img/logo.png')}}" alt="">
+                <h4>Contact</h4>
+                <p><strong>Address: </strong> Embakasi Nairobi</p>
+                <p><strong>Phone: </strong> <a href="tel:+254708683439">+254 708 683 439</a></p>
+                <p><strong>Hours: </strong> 09:00 - 5:00P.M  MON-SAT</p>
+                <p><strong>Location: </strong> 
+                    <a href="https://maps.google.com/maps?q=Pipeline+Embakasi+Nairobi" target="_blank">Embakasi Nairobi</a>
+                </p>
+                <p>
+            </div>
+        </footer>
+            
+        
         <script src="{{asset('assets/index/script.js')}}"></script>
     </body>
 </html>
