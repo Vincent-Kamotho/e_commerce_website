@@ -22,3 +22,6 @@ Route::get('shop', function() {
 Route::get('single-product', function(){
     return view('sproduct');
 });
+Route::get('blog', function(){
+    return view('blog');
+});
