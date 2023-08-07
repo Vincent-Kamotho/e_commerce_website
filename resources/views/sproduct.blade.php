@@ -18,8 +18,8 @@
 
             <div>
                 <ul id="navbar">
-                    <li><a class="active" href="{{url('/')}}">Home</a></li>
-                    <li><a href="{{url('shop')}}">Shop</a></li>
+                    <li><a href="{{url('/')}}">Home</a></li>
+                    <li><a class="active" href="{{url('shop')}}">Shop</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -28,40 +28,46 @@
             </div>
         </section>
 
-        <section id="hero">
-            <h4>Trade-in-offer</h4>
-            <h2>Super Value Deals</h2>
-            <h1>On all Products</h1>
-            <p>Save more with coupons & up to 70% off! </p>
-            <button>Shop Now</button>
+        <section id="prodetails" class="section-p1">
+            <div class="single-pro-image">
+                <img src="{{asset('assets/index/img/products/f1.jpg')}}" width="100%" id="MainImg" alt="">
+
+                <div class="small-img-group">
+                    <div class="small-img-col">
+                        <img src="{{asset('assets/index/img/products/f1.jpg')}}" width="100%" class="small-img" alt="">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="{{asset('assets/index/img/products/f2.jpg')}}" width="100%" class="small-img" alt="">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="{{asset('assets/index/img/products/f3.jpg')}}" width="100%" class="small-img" alt="">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="{{asset('assets/index/img/products/f4.jpg')}}" width="100%" class="small-img" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="single-pro-details">
+                <h6>Home / T-Shirt</h6>
+                <h4>Men's Fashion T Shirts</h4>
+                <h2>$139.00</h2>
+                <select>
+                    <option>Select Size</option>
+                    <option>XL</option>
+                    <option>XXL</option>
+                    <option>Small</option>
+                    <option>Large</option>
+                </select>
+                <input type="number" value="1">
+                <button class="normal">Add To Cart</button>
+                <h4>Product Details</h4>
+                <span>The cottin shirt that comes with substantial cotton material.  Also Fabric
+                    and a seamless double-needle collar, and available in a range of colors, it offers it all
+                    in the ultimate head-turning package.
+                </span>
+            </div>
         </section>
 
-        <section id="feature" class="section-p1">
-            <div class="fe-box">
-                <img src="{{asset('assets/index/img/features/f1.png')}}" alt="">
-                <h6>Free Shipping</h6>
-            </div>
-            <div class="fe-box">
-                <img src="{{asset('assets/index/img/features/f2.png')}}" alt="">
-                <h6>Online Order</h6>
-            </div>
-            <div class="fe-box">
-                <img src="{{asset('assets/index/img/features/f3.png')}}" alt="">
-                <h6>Save Money</h6>
-            </div>
-            <div class="fe-box">
-                <img src="{{asset('assets/index/img/features/f4.png')}}" alt="">
-                <h6>Promotions</h6>
-            </div>
-            <div class="fe-box">
-                <img src="{{asset('assets/index/img/features/f5.png')}}" alt="">
-                <h6>Happy Sell</h6>
-            </div>
-            <div class="fe-box">
-                <img src="{{asset('assets/index/img/features/f6.png')}}" alt="">
-                <h6>Support</h6>
-            </div>
-        </section>
 
         <section id="product1" class="section-p1">
             <h2>Featured Products</h2>
@@ -131,77 +137,7 @@
                     </div>
                     <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
                 </div>
-                <div class="pro">
-                    <img src="{{asset('assets/index/img/products/f5.jpg')}}" alt="">
-                    <div class="des">
-                        <span>adidas</span>
-                        <h5>Cartoon astronaunt T-Shirts</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-                </div>
-                <div class="pro">
-                    <img src="{{asset('assets/index/img/products/f6.jpg')}}" alt="">
-                    <div class="des">
-                        <span>adidas</span>
-                        <h5>Cartoon astronaunt T-Shirts</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-                </div>
-                <div class="pro">
-                    <img src="{{asset('assets/index/img/products/f7.jpg')}}" alt="">
-                    <div class="des">
-                        <span>adidas</span>
-                        <h5>Cartoon astronaunt T-Shirts</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-                </div>
-                <div class="pro">
-                    <img src="{{asset('assets/index/img/products/f8.jpg')}}" alt="">
-                    <div class="des">
-                        <span>adidas</span>
-                        <h5>Cartoon astronaunt T-Shirts</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-                </div>
             </div>
-        </section>
-
-        <section id="banner" class="section-m1">
-            <h4>Repair Service</h4>
-            <h2>Up to <span>70% off</span> - All t-shirts & Accessories</h2>
-            <button class="normal">Explore More</button>
         </section>
 
         <footer class="section-p1">
@@ -217,6 +153,24 @@
                 <p>
             </div>
         </footer>
+
+        <script>
+            var MainImg = document.getElementById("MainImg");
+            var smallimg = document.getElementsByClassName("small-img");
+
+            smallimg[0].onclick = function(){
+                MainImg.src = smallimg[0].src;
+            }
+            smallimg[1].onclick = function(){
+                MainImg.src = smallimg[1].src;
+            }
+            smallimg[2].onclick = function(){
+                MainImg.src = smallimg[2].src;
+            }
+            smallimg[3].onclick = function(){
+                MainImg.src = smallimg[3].src;
+            }
+        </script>
             
         
         <script src="{{asset('assets/index/script.js')}}"></script>

@@ -18,8 +18,8 @@
 
             <div>
                 <ul id="navbar">
-                    <li><a class="active" href="{{url('/')}}">Home</a></li>
-                    <li><a href="{{url('shop')}}">Shop</a></li>
+                    <li><a href="{{url('/')}}">Home</a></li>
+                    <li><a class="active" href="{{url('shop')}}">Shop</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -28,46 +28,14 @@
             </div>
         </section>
 
-        <section id="hero">
-            <h4>Trade-in-offer</h4>
-            <h2>Super Value Deals</h2>
-            <h1>On all Products</h1>
+        <section id="page-header">
+            <h2>#stayhome</h2>
             <p>Save more with coupons & up to 70% off! </p>
-            <button>Shop Now</button>
-        </section>
-
-        <section id="feature" class="section-p1">
-            <div class="fe-box">
-                <img src="{{asset('assets/index/img/features/f1.png')}}" alt="">
-                <h6>Free Shipping</h6>
-            </div>
-            <div class="fe-box">
-                <img src="{{asset('assets/index/img/features/f2.png')}}" alt="">
-                <h6>Online Order</h6>
-            </div>
-            <div class="fe-box">
-                <img src="{{asset('assets/index/img/features/f3.png')}}" alt="">
-                <h6>Save Money</h6>
-            </div>
-            <div class="fe-box">
-                <img src="{{asset('assets/index/img/features/f4.png')}}" alt="">
-                <h6>Promotions</h6>
-            </div>
-            <div class="fe-box">
-                <img src="{{asset('assets/index/img/features/f5.png')}}" alt="">
-                <h6>Happy Sell</h6>
-            </div>
-            <div class="fe-box">
-                <img src="{{asset('assets/index/img/features/f6.png')}}" alt="">
-                <h6>Support</h6>
-            </div>
         </section>
 
         <section id="product1" class="section-p1">
-            <h2>Featured Products</h2>
-            <p>Summer Collection New Modern Desing</p>
             <div class="pro-container">
-                <div class="pro">
+                <div class="pro" onclick="window.location.href='{{url('single-product')}}'">
                     <img src="{{asset('assets/index/img/products/f1.jpg')}}" alt="">
                     <div class="des">
                         <span>adidas</span>
@@ -198,10 +166,10 @@
             </div>
         </section>
 
-        <section id="banner" class="section-m1">
-            <h4>Repair Service</h4>
-            <h2>Up to <span>70% off</span> - All t-shirts & Accessories</h2>
-            <button class="normal">Explore More</button>
+        <section id="pagination" class="section-p1">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#"><i class="fal fa-long-arrow-alt-right"></i></a>
         </section>
 
         <footer class="section-p1">
