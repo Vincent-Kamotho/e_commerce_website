@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+Route::get('/', [App\Http\Controllers\FrontendController::class, 'index']);
+
 Route::get('shop', function() {
     return view('shop');
 });
@@ -34,3 +36,21 @@ Route::get('contact', function(){
 Route::get('cart', function(){
     return view('cart');
 });
+
+Route::group(['prefix' => 'admin'], function(){
+    Route::get('/home', [App\Http\Controllers\Admin\AdminController::class, 'index']);
+
+    Route::group(['prefix' => 'products'], function(){
+        Route::get('/show-products', [App\Http\Controllers\Admin\ProductsController::class, 'index']);
+        Route::get('/add-product', [App\Http\Controllers\Admin\ProductsController::class, 'create']);
+        Route::post('/save-product', [App\Http\Controllers\Admin\ProductsController::class, 'store'])->name('save-product');
+    });
+
+    Route::group(['prefix' => 'shopping'], function(){
+        Route::get('list-shopping', [App\Http\Controllers\Admin\ShoppingController::class, 'index']);
+        Route::get('add-shopping-product', [App\Http\Controllers\Admin\ShoppingController::class, 'create']);
+        Route::post('save-shopping', [App\Http\Controllers\Admin\ShoppingController::class, 'store']);
+    });
+});
+
+

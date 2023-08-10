@@ -20,10 +20,10 @@
                 <ul id="navbar">
                     <li><a class="active" href="{{url('/')}}">Home</a></li>
                     <li><a href="{{url('shop')}}">Shop</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
+                    <li><a href="{{url('blog')}}">Blog</a></li>
+                    <li><a href="{{url('about')}}">About</a></li>
+                    <li><a href="{{url('contact')}}">Contact</a></li>
+                    <li><a href="{{url('cart')}}"><i class="far fa-shopping-bag"></i></a></li>
                 </ul>
             </div>
         </section>
@@ -67,11 +67,12 @@
             <h2>Featured Products</h2>
             <p>Summer Collection New Modern Desing</p>
             <div class="pro-container">
+                @foreach ($products as $product)
                 <div class="pro">
-                    <img src="{{asset('assets/index/img/products/f1.jpg')}}" alt="">
+                    <img src="{{asset($product->image)}}" alt="">
                     <div class="des">
-                        <span>adidas</span>
-                        <h5>Cartoon astronaunt T-Shirts</h5>
+                        <span>{{$product->product_brand}}</span>
+                        <h5>{{$product->product_name}}</h5>
                         <div class="star">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -79,11 +80,12 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <h4>$78</h4>
+                        <h4>KES  {{$product->product_price}}</h4>
                     </div>
                     <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
                 </div>
-                <div class="pro">
+                @endforeach
+                {{-- <div class="pro">
                     <img src="{{asset('assets/index/img/products/f2.jpg')}}" alt="">
                     <div class="des">
                         <span>adidas</span>
@@ -194,14 +196,17 @@
                         <h4>$78</h4>
                     </div>
                     <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-                </div>
+                </div> --}}
             </div>
         </section>
 
         <section id="banner" class="section-m1">
             <h4>Repair Service</h4>
             <h2>Up to <span>70% off</span> - All t-shirts & Accessories</h2>
-            <button class="normal">Explore More</button>
+            <a href="{{url('shop')}}">
+                <button class="normal">Explore More</button>
+            </a>
+            
         </section>
 
         <footer class="section-p1">
