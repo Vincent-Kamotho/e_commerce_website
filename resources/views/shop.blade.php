@@ -8,6 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ecommerce Website</title>
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <link rel="stylesheet" href="{{asset('assets/index/style.css')}}">
     </head>
 
@@ -33,29 +35,24 @@
             <p>Save more with coupons & up to 70% off! </p>
         </section>
 
+        
         <section id="product1" class="section-p1">
+           <a href="{{url('cart')}}">
+                <button type="submit" class="normal" style="background: #17a2b8; text-align:right;">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart <span style="color: red;">&nbsp; &nbsp; &nbsp; {{ count((array) session('cart')) }}</span>
+                    
+                </button>
+           </a>
+            
             <div class="pro-container">
-                <div class="pro" onclick="window.location.href='{{url('single-product')}}'">
-                    <img src="{{asset('assets/index/img/products/f1.jpg')}}" alt="">
-                    <div class="des">
-                        <span>adidas</span>
-                        <h5>Cartoon astronaunt T-Shirts</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-                </div>
+                @foreach($shoppings as $shopping)
+                
+                {{-- <div class="pro" onclick="window.location.href='{{url('shop/single-product/'. $shopping->id)}}'"> --}}
                 <div class="pro">
-                    <img src="{{asset('assets/index/img/products/f2.jpg')}}" alt="">
+                    <img src="{{asset($shopping->image)}}" alt="">
                     <div class="des">
-                        <span>adidas</span>
-                        <h5>Cartoon astronaunt T-Shirts</h5>
+                        <span>{{$shopping->product_brand}}</span>
+                        <h5>{{$shopping->product_name}}</h5>
                         <div class="star">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -63,106 +60,12 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <h4>$78</h4>
+                        <h4>KES  {{$shopping->product_price}}</h4>
                     </div>
-                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                    <a href="{{url('add-to-cart/'. $shopping->id)}}"><i class="fal fa-shopping-cart cart"></i></a>
                 </div>
-                <div class="pro">
-                    <img src="{{asset('assets/index/img/products/f3.jpg')}}" alt="">
-                    <div class="des">
-                        <span>adidas</span>
-                        <h5>Cartoon astronaunt T-Shirts</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-                </div>
-                <div class="pro">
-                    <img src="{{asset('assets/index/img/products/f4.jpg')}}" alt="">
-                    <div class="des">
-                        <span>adidas</span>
-                        <h5>Cartoon astronaunt T-Shirts</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-                </div>
-                <div class="pro">
-                    <img src="{{asset('assets/index/img/products/f5.jpg')}}" alt="">
-                    <div class="des">
-                        <span>adidas</span>
-                        <h5>Cartoon astronaunt T-Shirts</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-                </div>
-                <div class="pro">
-                    <img src="{{asset('assets/index/img/products/f6.jpg')}}" alt="">
-                    <div class="des">
-                        <span>adidas</span>
-                        <h5>Cartoon astronaunt T-Shirts</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-                </div>
-                <div class="pro">
-                    <img src="{{asset('assets/index/img/products/f7.jpg')}}" alt="">
-                    <div class="des">
-                        <span>adidas</span>
-                        <h5>Cartoon astronaunt T-Shirts</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-                </div>
-                <div class="pro">
-                    <img src="{{asset('assets/index/img/products/f8.jpg')}}" alt="">
-                    <div class="des">
-                        <span>adidas</span>
-                        <h5>Cartoon astronaunt T-Shirts</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$78</h4>
-                    </div>
-                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-                </div>
+                @endforeach
+                
             </div>
         </section>
 

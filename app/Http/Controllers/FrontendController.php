@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Shopping;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -16,6 +17,69 @@ class FrontendController extends Controller
     {
         $products = Product::all();
         return view('index')->with('products' , $products);
+    }
+
+    public function shopview()
+    {
+        $shoppings = Shopping::all();
+        return view('shop')->with('shoppings' , $shoppings);
+    }
+
+    public function showItem($id)
+    {
+        $product = Shopping::find($id);
+        return view('sproduct')->with('product' , $product);
+    }
+
+    public function addToCart(Request $request , $id)
+    {
+        
+        $product = Product::findOrFail($id);
+
+        $cart = session()->get('cart' , []);
+
+        if(isset($cart[$id])){
+            $cart[$id]['quantity']++;
+        }else {
+            $cart[$id] = [
+                "name" => $product->product_name,
+                "quantity" => $request->input('quantity'),
+                "price" => $product->product_price,
+                "image" => $product->image,
+            ];
+        }
+
+        session()->put('cart' , $cart);
+
+        return redirect()->back()->with('success' , 'Successfully Added');
+        //return redirect()->to('cart')->with('success', 'Successfully Added');
+        
+    }
+
+    // public function remove(Request $request)
+    // {
+    //     if($request->id){
+    //         $cart = session()->get('cart');
+    //         if(isset($cart[$request->id])) {
+    //             unset($cart[$request->id]);
+    //             session()->put('cart' , $cart);
+    //         }
+    //         session()->flash('success' , 'Product successfully removed');
+    //     }
+    // }
+
+    public function remove($id)
+    {
+        $cart = session()->get('cart');
+
+        if(isset($cart[$id])){
+
+            unset($cart[$id]);
+
+            session()->put('cart' , $cart);
+            return response()->json(['message' => 'Item removed successfully','redirect' => route('cart')]);
+        }
+        return response()->json(['message' => 'Item Successfully Removed']);
     }
 
     /**

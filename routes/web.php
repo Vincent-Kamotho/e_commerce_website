@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,13 +18,11 @@ use Illuminate\Support\Facades\Route;
 //     return view('index');
 // });
 Route::get('/', [App\Http\Controllers\FrontendController::class, 'index']);
+Route::get('shop', [App\Http\Controllers\FrontendController::class, 'shopview']);
+Route::get('shop/single-product/{id}', [App\Http\Controllers\FrontendController::class, 'showItem']);
+Route::get('add-to-cart/{id}', [App\Http\Controllers\FrontendController::class, 'addToCart']);
+Route::get('remove-from-cart/{id}', [App\Http\Controllers\FrontendController::class, 'remove'])->name('remove-from-cart');
 
-Route::get('shop', function() {
-    return view('shop');
-});
-Route::get('single-product', function(){
-    return view('sproduct');
-});
 Route::get('blog', function(){
     return view('blog');
 });
@@ -35,7 +34,7 @@ Route::get('contact', function(){
 });
 Route::get('cart', function(){
     return view('cart');
-});
+})->name('cart');
 
 Route::group(['prefix' => 'admin'], function(){
     Route::get('/home', [App\Http\Controllers\Admin\AdminController::class, 'index']);
