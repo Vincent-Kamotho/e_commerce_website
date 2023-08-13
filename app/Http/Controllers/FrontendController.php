@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Shopping;
 use Illuminate\Http\Request;
+use App\Mail\PurchaseSuccessful;
+use Illuminate\Support\Facades\Mail;
 
 class FrontendController extends Controller
 {
@@ -80,6 +82,29 @@ class FrontendController extends Controller
             return response()->json(['message' => 'Item removed successfully','redirect' => route('cart')]);
         }
         return response()->json(['message' => 'Item Successfully Removed']);
+    }
+
+    public function Checkout()
+    {
+        return view('checkout');
+    }
+
+    public function Purchase(Request $request)
+    {
+        // $mailData = [
+        //     $email = $request->input('email'),
+        //     $name = $request->input('name'),
+        //     $address = $request->input('address'),
+        //     $card_name = $request->input('card_name'),
+        //     $card_number = $request->input('card_number')
+        // ];
+        
+
+        // Mail::to($email)->send(new PurchaseSuccessful($mailData));
+        
+        // dd("Email is sent successfully");
+
+        return redirect()->back()->with('success', 'Product Successfully Purchased');
     }
 
     /**

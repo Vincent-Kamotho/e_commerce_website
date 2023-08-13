@@ -98,7 +98,9 @@
                     <td class="final-total"><strong>KES {{ $total}}</strong></td>
                 </tr>
             </table>
-            <button class="normal">Proceed to checkout</button>
+            <a href="{{url('login')}}">
+                <button class="normal">Proceed to checkout</button>
+            </a>
         </div>
     </section>
 

@@ -22,6 +22,12 @@ Route::get('shop', [App\Http\Controllers\FrontendController::class, 'shopview'])
 Route::get('shop/single-product/{id}', [App\Http\Controllers\FrontendController::class, 'showItem']);
 Route::get('add-to-cart/{id}', [App\Http\Controllers\FrontendController::class, 'addToCart']);
 Route::get('remove-from-cart/{id}', [App\Http\Controllers\FrontendController::class, 'remove'])->name('remove-from-cart');
+Route::get('guestcheckout', [App\Http\Controllers\FrontendController::class, 'Checkout']);
+Route::post('purchase', [App\Http\Controllers\FrontendController::class, 'Purchase']);
+
+Route::get('checkout', function(){
+    return view('checkout');
+});
 
 Route::get('blog', function(){
     return view('blog');
@@ -53,3 +59,7 @@ Route::group(['prefix' => 'admin'], function(){
 });
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
